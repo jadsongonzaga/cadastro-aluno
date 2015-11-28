@@ -8,4 +8,8 @@
     <item
         android:id="@+id/menu_telefone"
         android:title="Telefone"/>
+
+    <item
+        android:id="@+id/menu_sincronizar"
+        android:title="Sincronizar"/>
 </menu>

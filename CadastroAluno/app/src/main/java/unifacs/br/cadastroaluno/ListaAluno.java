@@ -19,6 +19,7 @@ import java.util.List;
 
 import unifacs.br.cadastroaluno.model.Aluno;
 import unifacs.br.cadastroaluno.model.dao.AlunoDAO;
+import unifacs.br.cadastroaluno.task.EnviarContatosTaks;
 
 public class ListaAluno extends AppCompatActivity {
 
@@ -111,6 +112,9 @@ public class ListaAluno extends AppCompatActivity {
                 Uri uri = Uri.parse("tel:9999999999");
                 ligar.setData(uri);
                 startActivity(ligar);
+                break;
+            case R.id.menu_sincronizar:
+                new EnviarContatosTaks(this).execute();
                 break;
         }
 

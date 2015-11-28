@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,9 +24,18 @@
         <activity
             android:name=".CadastroAlunoActivity"
             android:label="@string/app_name" >
-
         </activity>
+        <!-- Permissão a classe .SMSReciver para escutar  a chegada de SMS -->
+        <receiver android:name=".SMSReciver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECIVED"/>
+            </intent-filter>
+        </receiver>
 
     </application>
+    <!-- Permissão de SMS-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
 </manifest>
